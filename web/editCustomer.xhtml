@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"> 
+    <h:head>
+        <meta charset="utf-8" />
+        <title>Ajouter ou editer un client</title>
+        <h:outputStylesheet library="default" name="css/form.css"  />
+    </h:head>
+    <h:body>
+      <h:form>
+         <fieldset>
+         	<legend>Ajouter ou editer un client</legend>
+                <h:outputLabel for="firstName">Nom <samp class="requis">*</samp></h:outputLabel>
+                <h:inputText id="firstName" value="" required="true" size="20" maxlength="60"/>
+                <h:message id="firstNameMessage" for="firstName" errorClass="erreur"/>
+	        <br />
+	
+                <h:outputLabel for="lastName">Prénom <samp class="requis">*</samp></h:outputLabel>
+                <h:inputText id="lastName" value="" required="true" size="20" maxlength="60"/>
+                <h:message id="lastNameMessage" for="lastName" errorClass="erreur"/>
+	        <br />
+	
+                <h:outputLabel for="accounts">Comptes <samp class="requis">*</samp></h:outputLabel>
+                <h:inputText id="accounts" value="" required="true" size="20" maxlength="60"/>
+                <h:message id="accountsMessage" for="accounts" errorClass="erreur"/>
+	        <br />
+	        
+	        <h:messages globalOnly="true" infoClass="info" />
+	
+	        <h:commandButton value="Inscription" action="" styleClass="sansLabel" />
+	        <br />
+          </fieldset>
+        </h:form> 	
+    </h:body>
+</html>
