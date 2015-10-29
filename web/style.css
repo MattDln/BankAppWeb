@@ -1,0 +1,315 @@
+root { 
+    display: block;
+}
+
+body{
+    font-family: Trebuchet MS;
+    font-size: 12pt;
+}
+.listCust{
+    border:2px solid forestgreen;
+    border-collapse:collapse;
+    width: 300px;
+}
+
+.listTH{
+    background-color: forestgreen;
+    color: aliceblue;
+    border:none;
+}
+form > table{
+    border: 0px;    
+}
+
+.listTR{
+    background-color: white;
+}
+
+form td{
+    /*text-align : inherit;*/
+    padding-left: 0;
+   /*padding-right:2em;*/
+    border:none;
+}
+
+td{
+    text-align: center;
+    border-color: darkolivegreen;
+}
+
+/*1 ligne sur 2 */
+.listTR:nth-child(2n+1)
+{
+    background-color: #f0f0f0;
+}
+
+.listTR:hover{
+    background-color: lightgreen;
+}
+
+.header{
+    padding-left:100px;
+    padding-top:30px;
+    padding-bottom:20px;
+    padding-right:20px;
+    background-color: forestgreen;
+    border-bottom:3px solid darkgreen;
+    text-align: right;
+    height:80px;
+}
+
+.header h1{
+    font-weight: bold;
+    font-size: 30px;
+    color:aliceblue;
+    font-variant: small-caps;
+    text-align: left;
+}
+
+.header a{
+    font-size: 12pt;
+    color: aliceblue;    
+}
+
+.leftMenu{
+    background-color: forestgreen;
+    border:3px solid darkgreen; 
+    font-size: 14pt;
+    display: inline-block;
+    float: left;
+    width: 200px;
+    height: 450px;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding-left:20px;
+}
+
+.leftMenu a{
+    display:block;
+    box-shadow: 4px 4px 5px rgb(79, 79, 79);
+    background-color: aliceblue;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 4px;
+    list-style-type: none;
+    font-size: 12pt;
+    font-weight: bold;
+    width: 180px;
+    height: 25px;
+}
+
+.leftMenu a:first-child{
+    margin-top: 35px;
+
+}
+
+.leftMenu a:hover{
+    background-color: lightgreen;
+}
+
+.leftMenu a{
+    color:darkgreen;
+    text-decoration: inherit;
+}
+.contenu{
+    background-color : white;
+    padding-left : 10px;
+    padding-bottom : 50px;
+    display: inline-block;
+    width: 800px;
+    min-height: 500px;
+    margin-right: 35px;
+    margin-top: 35px;
+    margin-left: 35px;
+}
+
+.footer{
+    padding-top:10px;
+    background-color: forestgreen;
+    border-top:3px solid darkgreen;
+    text-align: center;
+    height: 200px;
+}
+h1{
+    font-weight: bold;
+    font-size: 20pt;
+    color:darkgreen;
+    font-variant: small-caps; 
+}
+
+h2{
+    font-weight: bold;
+    font-size: 16pt;
+    font-variant: small-caps; 
+}
+
+h3{
+    font-weight: bold;
+    font-size: 14pt;
+    font-variant: small-caps; 
+}
+
+input[type="submit"]{
+    box-shadow: 4px 4px 5px rgb(79, 79, 79);
+    background-color: forestgreen;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left:100px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    list-style-type: none;
+    color:aliceblue;
+    height:30px;
+    width :100px;
+    cursor:pointer;
+}
+
+input[type="reset"]{
+    box-shadow: 4px 4px 5px rgb(79, 79, 79);
+    background-color: forestgreen;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    list-style-type: none;
+    color:aliceblue;
+    height:30px;
+    width :100px;
+    cursor:pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: lightgreen;
+    color : darkgreen;
+}
+
+input[type="reset"]:hover{
+    background-color: lightgreen;
+    color : darkgreen;
+}
+
+#emphase{
+    font-size: 10pt;
+    color: black;
+    font-style: italic;
+    font-weight:bold;
+}
+
+.lienBouton{
+    display:block;
+    box-shadow: 4px 4px 5px rgb(79, 79, 79);
+    background-color: forestgreen;
+    margin-top: 20px;
+    margin-left:300px;
+    text-align: center;
+    text-decoration: inherit;
+    font-weight: bold;
+    border-radius: 10px;
+    list-style-type: none;
+    color:aliceblue;
+    height:25px;
+    width :220px;
+    cursor:pointer;
+}
+
+.lienBouton:hover{
+    background-color: lightgreen;
+    color : darkgreen;
+}
+
+.cadre{
+    width : 400px;
+    height: 300px;
+    border: 5px solid darkgreen;
+    border-radius: 50px;
+    padding-left : 80px;
+    padding-top : 40px;
+    margin-top: 100px;
+    margin-left: 400px;
+    box-shadow: 4px 4px 5px rgb(79, 79, 79);
+}
+
+.cadre form{
+    width : 250px;
+}
+
+.cadre h1{
+    width: 250px;
+}
+
+#spanAdd{
+    margin-top : 20px;
+}
+
+#spanAdd > a{
+    color : green;
+}
+
+td > a{
+    color : black;
+}
+
+td{
+    text-align: center;
+}
+.check{
+    color:#41ad49;
+    border:2px solid #41ad49; 
+    font-size: 10pt;
+    width: 500px;;
+    height: 20px;
+    border-radius: 5px;
+    padding-left:20px;
+    padding-right: 20px;
+}
+
+#sendButton{
+    display:block; 
+    text-align:center
+}
+
+.divMenu{
+    float:left;
+}
+
+.rightMenu{
+    float : right;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    padding : 20px;
+}
+
+
+.btn{
+    display:block;
+    box-shadow: 4px 4px 5px rgb(79, 79, 79);
+    background-color: forestgreen;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: inherit;
+    font-weight: bold;
+    border-radius: 10px;
+    list-style-type: none;
+    color:aliceblue;
+    height:25px;
+    width :220px;
+    cursor:pointer;
+}
+.errorMsgLigne{
+    color:red;
+    border:2px solid red; 
+    font-size: 10pt;
+    width: 500px;;
+    height: 20px;
+    border-radius: 5px;
+    padding-left:20px;
+    padding-right: 20px;
+}
+
+.errorMsg{
+    color:red;
+    font-style: italic;
+}

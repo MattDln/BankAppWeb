@@ -1,40 +1,72 @@
 <?xml version="1.0" encoding="windows-1252"?>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+    Document   : editCustomer
+    Created on : 29.10.2015
+    Author     : Matthieu deillon
 -->
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"> 
     <h:head>
-        <meta charset="utf-8" />
         <title>Ajouter ou editer un client</title>
-        <h:outputStylesheet library="default" name="css/form.css"  />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="./style.css"/>
     </h:head>
     <h:body>
-      <h:form>
-         <fieldset>
-         	<legend>Ajouter ou editer un client</legend>
-                <h:outputLabel for="firstName">Nom <samp class="requis">*</samp></h:outputLabel>
-                <h:inputText id="firstName" value="" required="true" size="20" maxlength="60"/>
-                <h:message id="firstNameMessage" for="firstName" errorClass="erreur"/>
-	        <br />
-	
-                <h:outputLabel for="lastName">Prénom <samp class="requis">*</samp></h:outputLabel>
-                <h:inputText id="lastName" value="" required="true" size="20" maxlength="60"/>
-                <h:message id="lastNameMessage" for="lastName" errorClass="erreur"/>
-	        <br />
-	
-                <h:outputLabel for="accounts">Comptes <samp class="requis">*</samp></h:outputLabel>
-                <h:inputText id="accounts" value="" required="true" size="20" maxlength="60"/>
-                <h:message id="accountsMessage" for="accounts" errorClass="erreur"/>
-	        <br />
-	        
-	        <h:messages globalOnly="true" infoClass="info" />
-	
-	        <h:commandButton value="Valider" styleClass="sansLabel" />
-	        <br />
-          </fieldset>
-        </h:form> 	
+            <div class="header">
+                <div class="divMenu">
+                    <h1><h:outputText value="#{lan.titleWebApp}"/></h1>
+                </div>
+                <div class="rightMenu">
+                    <div>
+                        <h:form>
+                            <h:commandLink rendered="#{!lanBean.french}" action="#{lanBean.toFr}">
+                                <h:graphicImage width="30" height="15" value="./img/DS.jpg" />
+                            </h:commandLink>
+                            <h:commandLink rendered="#{lanBean.french}" action="#{lanBean.toEn}">
+                                <h:graphicImage width="30" height="15" value="./img/DE.png" rendered="#{lanBean.french}"/>
+                            </h:commandLink>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+            <div class="leftMenu">
+                <h:form>
+                    <h:commandLink action="toWelcome">
+                        <h:outputText value="#{lan.index}"/>
+                    </h:commandLink>
+                    <h:commandLink action="toEdit">
+                        <h:outputText value="#{lan.addCustomer}"/>
+                    </h:commandLink>
+                </h:form>
+            </div>
+            <div class="contenu">   
+            <h:form id="formulaire">
+                
+                <h:panelGrid id="panelGrid" columns="2" border="0" cellpadding="1" cellspacing="2">
+                        <h:outputLabel for="firstName" value="#{lan.lastName}"><samp class="requis"> *</samp></h:outputLabel>
+                        <h:inputText id="firstName" value="" required="true" size="20" maxlength="60"/>
+                        <h:message id="firstNameMessage" for="firstName" errorClass="erreur"/>
+                        <br />
+
+                        <h:outputLabel for="lastName" value="#{lan.firstName}"><samp class="requis"> *</samp></h:outputLabel>
+                        <h:inputText id="lastName" value="" required="true" size="20" maxlength="60"/>
+                        <h:message id="lastNameMessage" for="lastName" errorClass="erreur"/>
+                        <br />
+
+                        <h:outputLabel for="accounts" value="#{lan.account}"><samp class="requis"> *</samp></h:outputLabel>
+                        <h:inputText id="accounts" value="" required="true" size="20" maxlength="60"/>
+                        <h:message id="accountsMessage" for="accounts" errorClass="erreur"/>
+                        <br />
+
+                        <h:messages globalOnly="true" infoClass="info" />
+
+                        <h:commandButton value="#{lan.send}" styleClass="sansLabel" />
+                        <br />
+                </h:panelGrid>
+            </h:form> 
+        </div>
+        <div class="footer">
+            <h:outputText value="#{lan.footer}" id="emphase"/>
+        </div>        
     </h:body>
 </html>

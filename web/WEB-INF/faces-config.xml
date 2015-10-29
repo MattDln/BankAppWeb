@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <application>
+        <resource-bundle>
+            <base-name>ch.hearc.ig.odi.clientscomptes.presentation.bundle.Resources</base-name>
+            <var>lan</var>
+        </resource-bundle>
+        <locale-config>
+            <default-locale>fr</default-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+    </application>
+    <!--navigation page index(Welcome) -->
+    <navigation-rule>
+        <description>Navigation Welcome</description>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>toAdd</from-outcome>
+            <to-view-id>/editCustomer.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>toWelcome</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{lanBean.toFr}</from-action>
+            <from-outcome>done</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{lanBean.toEn}</from-action>
+            <from-outcome>done</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>      
+    </navigation-rule>
+    <!--navigation page edition client -->
+    <navigation-rule>
+        <description>Navigation Edit client</description>
+        <from-view-id>/editCustomer.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>toWelcome</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>toAdd</from-outcome>
+            <to-view-id>/editCustomer.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{lanBean.toFr}</from-action>
+            <from-outcome>done</from-outcome>
+            <to-view-id>/editCustomer.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{lanBean.toEn}</from-action>
+            <from-outcome>done</from-outcome>
+            <to-view-id>/editCustomer.xhtml</to-view-id>
+        </navigation-case>       
+    </navigation-rule>    
+</faces-config>
