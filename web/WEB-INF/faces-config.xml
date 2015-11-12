@@ -58,5 +58,5 @@
             <from-outcome>done</from-outcome>
             <to-view-id>/editCustomer.xhtml</to-view-id>
         </navigation-case>       
-    </navigation-rule>    
+    </navigation-rule> 
 </faces-config>

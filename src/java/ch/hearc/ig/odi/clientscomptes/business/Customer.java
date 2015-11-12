@@ -24,6 +24,10 @@ public class Customer {
         this.lastName = lastName;
     }
 
+    public Customer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Integer getNumber() {
         return this.number;
     }

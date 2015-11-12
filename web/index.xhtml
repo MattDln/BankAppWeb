@@ -1,46 +1,29 @@
 <?xml version='1.0' encoding='UTF-8' ?>
+<!--
+    Document   : index
+    Created on : 29.10.2015
+    Author     : Matthieu deillon
+-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Accueil</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link rel="stylesheet" type="text/css" media="screen" href="./style.css"/>
     </h:head>
     <h:body>
-            <div class="header">
-                <div class="divMenu">
-                    <h1><h:outputText value="#{lan.titleWebApp}"/></h1>
-                </div>
-                <div class="rightMenu">
-                    <div>
-                        <h:form>
-                            <h:commandLink rendered="#{!lanBean.french}" action="#{lanBean.toFr}">
-                                <h:graphicImage width="30" height="15" value="./img/DS.jpg" />
-                            </h:commandLink>
-                            <h:commandLink rendered="#{lanBean.french}" action="#{lanBean.toEn}">
-                                <h:graphicImage width="30" height="15" value="./img/DE.png" rendered="#{lanBean.french}"/>
-                            </h:commandLink>
-                        </h:form>
-                    </div>
-                </div>
-            </div>
-            <div class="leftMenu">
-                <h:form>
-                    <h:commandLink action="toWelcome">
-                        <h:outputText value="#{lan.index}"/>
-                    </h:commandLink>
-                    <h:commandLink action="toAdd">
-                        <h:outputText value="#{lan.addCustomer}"/>
-                    </h:commandLink>
-                </h:form>
-            </div>
-            <div class="contenu">
-                <h1><h:outputText value="#{lan.indexText}"/></h1>
-            </div>
-            <div class="footer">
-                <h:outputText value="#{lan.footer}" id="emphase"/>
-            </div>
+        <div class="menu">
+            <ui:include src="./menu.xhtml" />
+        </div>        
+        <div class="contenu">
+            <h1><h:outputText value="#{lan.indexText}"/></h1>
+            <ui:include src="./listCustomer.xhtml" />
+        </div>
+        <div class="footer">
+            <h:outputText value="#{lan.footer}" id="emphase"/>
+        </div>
     </h:body>
 </html>
 
