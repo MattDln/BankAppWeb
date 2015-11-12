@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ch.hearc.ig.odi.clientscomptes.business;
 
 import java.util.List;
@@ -22,10 +17,6 @@ public class Customer {
         this.number = number;
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-
-    public Customer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Integer getNumber() {
@@ -71,7 +62,9 @@ public class Customer {
         Account account = new Account(number, name, balance, rate, this);
         boolean isPresent = false;
         for (Account acc : accounts) {
-            isPresent = isPresent && acc.equals(account);
+            if(!isPresent){
+                isPresent = acc.equals(account);
+            }
         }
         if (isPresent) {
             throw new IllegalArgumentException();

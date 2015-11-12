@@ -10,26 +10,21 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:c="http://java.sun.com/jsp/jstl/core">
-    <h1><h:outputText value="#{lan.listCustomer}"/></h1>
-    <c:choose>
-        <c:when test="${not empty listCustomer}">
-            <h:form id="liste">
-                <h:dataTable id="listeDT" var="dtCust" value="#{listCustomerBean.customers}" styleClass="listCust">
-                    <h:inputHidden id="pk" value="#{dtCust.number}"/>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="#{lan.listHeaderName}" styleClass="listTH"/>
-                        </f:facet>
-                        <h:outputText id="cmdName" value="#{dtCust.firstName}" styleClass="listTR"/>
-                    </h:column>
-                </h:dataTable>  
-            </h:form>
-        </c:when>
-        <c:otherwise>
-            <h:outputText value="#{lan.listEmpty}"/>
-        </c:otherwise>
-    </c:choose>
-    <h:form id="addClient">
+    <div class="contenu">
+        <h1><h:outputText value="#{lan.listCustomer}"/></h1>
+        <h:form id="liste">
+            <h:dataTable id="listeDT" var="dtCust" value="#{listCustomerBean.customers}" styleClass="listCust">
+                <h:inputHidden id="pk" value="#{dtCust.number}"/>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{lan.listHeaderName}" styleClass="listTH"/>
+                    </f:facet>
+                    <h:outputText id="cmdName" value="#{dtCust.firstName}" styleClass="listTR"/>
+                </h:column>
+            </h:dataTable>  
+        </h:form>
+        <h:form id="addClient">
 
-    </h:form>
+        </h:form>
+    </div>
 </html>

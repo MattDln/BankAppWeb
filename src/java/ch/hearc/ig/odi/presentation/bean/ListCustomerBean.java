@@ -8,8 +8,7 @@ package ch.hearc.ig.odi.presentation.bean;
 import ch.hearc.ig.odi.clientscomptes.business.Customer;
 import ch.hearc.ig.odi.clientscomptes.service.Services;
 import java.io.Serializable;
-import javax.faces.model.DataModel;
-import javax.faces.model.ListDataModel;
+import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -21,20 +20,14 @@ import javax.inject.Named;
 
 @Named
 public class ListCustomerBean implements Serializable{
-    private  DataModel<Customer> customers;
+    
     @Inject Services services;
 
     public ListCustomerBean() {
     }
     
     
-    public DataModel<Customer> getCustomers() {
-        customers = new ListDataModel<>();
-        customers.setWrappedData(services.getCustomers());
-        return customers;
-    }
-    
-    public void setCustomers(DataModel<Customer> customers) {
-        this.customers = customers;
+    public List<Customer> getCustomers() {
+        return services.getCustomersList();
     }
 }
