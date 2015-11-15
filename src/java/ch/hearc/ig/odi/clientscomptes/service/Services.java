@@ -61,7 +61,7 @@ public class Services implements Serializable{
      * Retourne une Map contenant tous les clients de la banque
      * @return Une Map contenant tous les clients de la banque
      */
-    public Map<Integer, Customer> getCustomers(){
+    public List<Customer> getCustomers(){
         return bank.getCustomers();
     }
     
@@ -71,6 +71,6 @@ public class Services implements Serializable{
      * @return Une List contenant tous les clients de la banque.
      */
     public List<Customer> getCustomersList(){
-        return new ArrayList(getCustomers().values());
+        return new ArrayList(getCustomers());
     }
 }

@@ -2,15 +2,15 @@ package ch.hearc.ig.odi.presentation.bean;
 
 import java.io.Serializable;
 import java.util.Locale;
-import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 
 /**
  *
- * @author Fabien Vuilleumier
+ * @author DeillonM
  */
-@ManagedBean(name = "lanBean")
+@Named
 @SessionScoped
 public class LanBean implements Serializable {
 

@@ -1,5 +1,6 @@
 package ch.hearc.ig.odi.clientscomptes.business;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,18 +14,11 @@ public class Customer {
     private String lastName;
     private List<Account> accounts;
 
-    public Customer(Integer number, String firstName, String lastName) {
+    public Customer(Integer number, String Name, String lastName) {
         this.number = number;
-        this.firstName = firstName;
+        this.firstName = Name;
         this.lastName = lastName;
-    }
-
-    public Integer getNumber() {
-        return this.number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
+        this.accounts=new ArrayList<>();
     }
 
     public String getFirstName() {
@@ -34,19 +28,22 @@ public class Customer {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
+    
     public String getLastName() {
-        return this.lastName;
+        return this.lastName;        
+    }
+    
+    public Integer getNumber() {
+        return number;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 
-    /* Easy mode
-     public Account getAccountByNumber(Integer number) {
-     return accounts.get(number);
-     }*/
+    public void setAccounts(List<Account> accounts) {
+        this.accounts = accounts;
+    }
     
     public Account getAccountByNumber(Integer number) {
         Account accToReturn = null;
@@ -58,6 +55,10 @@ public class Customer {
         return accToReturn;
     }
 
+    public void addAccount(Account paccount) {
+        accounts.add(paccount);
+    }
+    
     public void addAccount(String number, String name, Double balance, Double rate) {
         Account account = new Account(number, name, balance, rate, this);
         boolean isPresent = false;

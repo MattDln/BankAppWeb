@@ -2,7 +2,7 @@
 <!--
     Document   : listCustomer
     Created on : 29.10.2015
-    Author     : Matthieu deillon
+    Author     : Matthieu Deillon
 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -12,18 +12,33 @@
       xmlns:c="http://java.sun.com/jsp/jstl/core">
     <div class="contenu">
         <h1><h:outputText value="#{lan.listCustomer}"/></h1>
-        <h:form id="liste">
-            <h:dataTable id="listeDT" var="dtCust" value="#{listCustomerBean.customers}" styleClass="listCust">
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="#{lan.listHeaderName}" styleClass="listTH"/>
-                    </f:facet>
-                    <h:outputText id="cmdName" value="#{dtCust.firstName}" styleClass="listTR"/>
-                </h:column>
-            </h:dataTable>  
-        </h:form>
+        <c:choose>
+            <c:when test="${not empty listCustomerBean}">
+                <h:form id="liste">
+                    <h:dataTable id="listeDT" var="dtCust" value="#{listCustomerBean.customers}" styleClass="listCust">
+                        <h:inputHidden id="pk" value="#{dtCust.number}"/>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{lan.listHeaderName}" styleClass="listTH"/>
+                            </f:facet>
+                            <h:outputText id="cmdName" value="#{dtCust.lastName}" styleClass="listTR"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{lan.listHeaderFirstName}" styleClass="listTH"/>
+                            </f:facet>
+                            <h:outputText value="#{dtCust.firstName}" styleClass="listTR"/>
+                        </h:column>
+                    </h:dataTable>                            
+                </h:form>
+                <br/>
+            </c:when>
+            <c:otherwise>
+                <h:outputText value="#{lan.listEmpty}"/>
+            </c:otherwise>
+        </c:choose>
         <h:form id="addClient">
-
+            <h:commandButton id="addBtn" value="#{lan.cmdButtonList}" action="#{listClientBean.ajouter}"/>
         </h:form>
     </div>
 </html>
