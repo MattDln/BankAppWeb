@@ -34,7 +34,12 @@
             <from-action>#{lanBean.toEn}</from-action>
             <from-outcome>done</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
-        </navigation-case>      
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{listCustomerBean.ajouter}</from-action>
+            <from-outcome>add</from-outcome>
+            <to-view-id>/editCustomer.xhtml</to-view-id>
+        </navigation-case>     
     </navigation-rule>
     <!--navigation page edition client -->
     <navigation-rule>
@@ -63,5 +68,9 @@
     <managed-bean>
         <managed-bean-name>listCustomerBean</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.presentation.bean.ListCustomerBean</managed-bean-class>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>editCustomerBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.presentation.bean.EditCustomerBean</managed-bean-class>
     </managed-bean>
 </faces-config>

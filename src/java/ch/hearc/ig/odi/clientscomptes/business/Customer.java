@@ -21,6 +21,9 @@ public class Customer {
         this.accounts=new ArrayList<>();
     }
 
+    public Customer() {
+    }
+        
     public String getFirstName() {
         return this.firstName;
     }

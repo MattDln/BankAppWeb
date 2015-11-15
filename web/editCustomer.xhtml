@@ -22,12 +22,12 @@
 
                 <h:panelGrid id="panelGrid" columns="2" border="0" cellpadding="1" cellspacing="2">
                     <h:outputLabel for="firstName" value="#{lan.lastName}"><samp class="requis"> *</samp></h:outputLabel>
-                    <h:inputText id="firstName" value="" required="true" size="20" maxlength="60"/>
+                    <h:inputText id="firstName" value="#{editCustomerBean.customer.lastName}" required="true" size="20" maxlength="60"/>
                     <h:message id="firstNameMessage" for="firstName" errorClass="erreur"/>
                     <br />
 
                     <h:outputLabel for="lastName" value="#{lan.firstName}"><samp class="requis"> *</samp></h:outputLabel>
-                    <h:inputText id="lastName" value="" required="true" size="20" maxlength="60"/>
+                    <h:inputText id="lastName" value="#{editCustomerBean.customer.firstName}" required="true" size="20" maxlength="60"/>
                     <h:message id="lastNameMessage" for="lastName" errorClass="erreur"/>
                     <br />
 

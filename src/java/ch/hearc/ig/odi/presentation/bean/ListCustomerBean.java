@@ -28,8 +28,13 @@ public class ListCustomerBean implements Serializable{
     public ListCustomerBean() {
     }
     
-    
     public List<Customer> getCustomers() {
         return services.getCustomersList();
+    }
+    public String ajouter(){
+        Customer customer = new Customer();
+        EditCustomerBean bean =Tools.getInstance().findBean("editCustomerBean", EditCustomerBean.class);
+        bean.setCustomer(customer);
+        return "add";                
     }
 }
