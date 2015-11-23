@@ -10,6 +10,7 @@ import ch.hearc.ig.odi.clientscomptes.business.Customer;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.ejb.Stateful;
 import javax.enterprise.context.SessionScoped;
 
@@ -57,7 +58,25 @@ public class Services implements Serializable{
     }
 
     public void saveCustomer(Customer cust){
-        bank.addCustomer(cust);
+        if(cust.getNumber()!=null){
+            for (Customer curCust:bank.getCustomers())
+                if(Objects.equals(curCust.getNumber(), cust.getNumber())){
+                    curCust=cust;
+                }
+        }else{
+            if (cust.getNumber() ==null){
+                cust.setNumber(nextVal());
+            }
+            bank.addCustomer(cust);
+        }
+    }  
+    
+    private int nextVal() {
+        int tmp = 0;
+        for (Customer cust : bank.getCustomers()) {
+            tmp = tmp > cust.getNumber() ? tmp : cust.getNumber();
+        }
+        return tmp + 1;
     }    
     
     /**

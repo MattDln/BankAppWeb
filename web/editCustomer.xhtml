@@ -22,9 +22,15 @@
             <h1><h:outputText value="#{lan.addCustomer}"/></h1>
             <h:form id="formulaire">
                 <h:panelGrid id="panelGrid" columns="2" border="0" cellpadding="1" cellspacing="2">
+                    
+                    <h:outputLabel for="Number" value="#{lan.listHeaderNumber}"/>
+                    <h:outputLabel for="Numer" value="#{editCustomerBean.customer.number}"/>
+                    <h:message id="NumberMessage" for="lastName" errorClass="erreur"/>
+                    <br />
+                    
                     <h:outputLabel for="lastName" value="#{lan.lastName}"><samp class="requis"> *</samp></h:outputLabel>
                     <h:inputText id="lastName" value="#{editCustomerBean.customer.lastName}" required="true" size="20" maxlength="60"/>
-                    <h:message id="lastNameNameMessage" for="lastName" errorClass="erreur"/>
+                    <h:message id="lastNameMessage" for="lastName" errorClass="erreur"/>
                     <br />
 
                     <h:outputLabel for="firstName" value="#{lan.firstName}"><samp class="requis"> *</samp></h:outputLabel>
