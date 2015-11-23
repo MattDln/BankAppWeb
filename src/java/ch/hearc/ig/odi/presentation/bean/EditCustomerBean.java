@@ -16,30 +16,44 @@ import javax.inject.Named;
  *
  * @author DeillonM
  */
+
 @Named
 @RequestScoped
 public class EditCustomerBean implements Serializable {
     
     @Inject Services services;
+    Customer customer;
 
-    private Customer customer = services.getCustomer();
-
+    /**
+     *
+     */
     public EditCustomerBean() {
     }
 
+    
     public Customer getCustomer() {
+        this.customer=services.getCustomer();
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+        services.setCustomer(customer);
     }
 
-     public String send() {
-        
+    /**
+     *
+     * @return
+     */
+    public String send() {
+        services.saveCustomer(customer);
         return "sent";
     }  
      
+    /**
+     *
+     * @return
+     */
     public String cancel() {
         return "cancel";
     }

@@ -24,10 +24,7 @@ public class Services implements Serializable{
     
     private Bank bank;
     private Customer customer;
-    
-    /**
-     *
-     */
+  
     public Services(){
         bank = new Bank(1, "Raiffeisen Neuchâtel");
         

@@ -18,31 +18,28 @@
             <ui:include src="./menu.xhtml" />
         </div>  
         <div class="contenu">   
+            <h:messages showSummary="true" showDetail="true" styleClass="errorMsg"/>
+            <h1><h:outputText value="#{lan.addCustomer}"/></h1>
             <h:form id="formulaire">
-
                 <h:panelGrid id="panelGrid" columns="2" border="0" cellpadding="1" cellspacing="2">
-                    <h:outputLabel for="firstName" value="#{lan.lastName}"><samp class="requis"> *</samp></h:outputLabel>
-                    <h:inputText id="firstName" value="#{editCustomerBean.customer.lastName}" required="true" size="20" maxlength="60"/>
+                    <h:outputLabel for="lastName" value="#{lan.lastName}"><samp class="requis"> *</samp></h:outputLabel>
+                    <h:inputText id="lastName" value="#{editCustomerBean.customer.lastName}" required="true" size="20" maxlength="60"/>
+                    <h:message id="lastNameNameMessage" for="lastName" errorClass="erreur"/>
+                    <br />
+
+                    <h:outputLabel for="firstName" value="#{lan.firstName}"><samp class="requis"> *</samp></h:outputLabel>
+                    <h:inputText id="firstName" value="#{editCustomerBean.customer.firstName}" required="true" size="20" maxlength="60"/>
                     <h:message id="firstNameMessage" for="firstName" errorClass="erreur"/>
-                    <br />
-
-                    <h:outputLabel for="lastName" value="#{lan.firstName}"><samp class="requis"> *</samp></h:outputLabel>
-                    <h:inputText id="lastName" value="#{editCustomerBean.customer.firstName}" required="true" size="20" maxlength="60"/>
-                    <h:message id="lastNameMessage" for="lastName" errorClass="erreur"/>
-                    <br />
-
-                    <h:outputLabel for="accounts" value="#{lan.account}"><samp class="requis"> *</samp></h:outputLabel>
-                    <h:inputText id="accounts" value="" required="true" size="20" maxlength="60"/>
-                    <h:message id="accountsMessage" for="accounts" errorClass="erreur"/>
                     <br />
 
                     <h:messages globalOnly="true" infoClass="info" />
 
-                    <h:commandButton value="#{lan.send}" styleClass="sansLabel" />
+                    <h:commandButton id="addBtn" value="#{lan.send}" action="#{editCustomerBean.send()}"/>
                     <br />
                 </h:panelGrid>
             </h:form> 
         </div>
+
         <div class="footer">
             <h:outputText value="#{lan.footer}" id="emphase"/>
         </div>        

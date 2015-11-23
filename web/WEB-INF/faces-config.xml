@@ -39,7 +39,12 @@
             <from-action>#{listCustomerBean.ajouter}</from-action>
             <from-outcome>add</from-outcome>
             <to-view-id>/editCustomer.xhtml</to-view-id>
-        </navigation-case>     
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{listCustomerBean.editer}</from-action>
+            <from-outcome>edit</from-outcome>
+            <to-view-id>/editCustomer.xhtml</to-view-id>
+        </navigation-case>             
     </navigation-rule>
     <!--navigation page edition client -->
     <navigation-rule>

@@ -19,6 +19,12 @@
                         <h:inputHidden id="pk" value="#{dtCust.number}"/>
                         <h:column>
                             <f:facet name="header">
+                                <h:outputText value="#{lan.editHeader}" styleClass="listTH"/>
+                            </f:facet>
+                            <h:commandLink value="Edit" action="#{listCustomerBean.editer}" styleClass="listTR"/> 
+                        </h:column>                       
+                        <h:column>
+                            <f:facet name="header">
                                 <h:outputText value="#{lan.listHeaderName}" styleClass="listTH"/>
                             </f:facet>
                             <h:outputText id="cmdName" value="#{dtCust.lastName}" styleClass="listTR"/>

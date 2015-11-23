@@ -56,6 +56,14 @@ public class Customer {
     public String getLastName() {
         return this.lastName;        
     }
+
+    /**
+     *
+     * @param lastName
+     */
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
     
     /**
      *

@@ -10,6 +10,8 @@ import ch.hearc.ig.odi.clientscomptes.service.Services;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -24,16 +26,31 @@ import javax.inject.Named;
 public class ListCustomerBean implements Serializable{
     
     @Inject Services services;
+    
+    private  DataModel<Customer> customers;
 
     public ListCustomerBean() {
     }
     
-    public List<Customer> getCustomers() {
-        return services.getCustomersList();
+    public DataModel<Customer> getCustomers() {
+        customers = new ListDataModel<>();
+        customers.setWrappedData(services.getCustomers());
+        return customers;
     }
+
+    public void setCustomers(DataModel<Customer> customers) {
+        this.customers = customers;
+    }    
+    
     public String ajouter(){
         Customer customer = new Customer();
         services.setCustomer(customer);
         return "add";                
     }
+    
+   public String editer(){
+       Customer customer = customers.getRowData();
+       services.setCustomer(customer);
+       return "edit";
+   }
 }
