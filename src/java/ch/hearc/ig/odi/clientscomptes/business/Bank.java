@@ -40,6 +40,10 @@ public class Bank {
         pcustomer.addAccount(newAccount);
     }
 
+    public void addCustomer(Customer pcustomer) {
+        customers.add(pcustomer);
+    }    
+    
     public List<Customer> getCustomers() {
         return customers;
     }

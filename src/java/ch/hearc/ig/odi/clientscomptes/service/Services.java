@@ -10,7 +10,6 @@ import ch.hearc.ig.odi.clientscomptes.business.Customer;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import javax.ejb.Stateful;
 import javax.enterprise.context.SessionScoped;
 
@@ -24,7 +23,11 @@ import javax.enterprise.context.SessionScoped;
 public class Services implements Serializable{
     
     private Bank bank;
+    private Customer customer;
     
+    /**
+     *
+     */
     public Services(){
         bank = new Bank(1, "Raiffeisen Neuchâtel");
         
@@ -37,7 +40,15 @@ public class Services implements Serializable{
         bank.addAccount("3", "Epargne", 0.002, cust);
         bank.addAccount("4", "Salaire", 0.001, cust);
     }
-    
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
     /**
      * Dit à  la banque de créer un nouveau client.
      * @param number Le numéro unique du client
@@ -48,6 +59,10 @@ public class Services implements Serializable{
         bank.addCustomer(number, fn, ln);
     }
 
+    public void saveCustomer(Customer cust){
+        bank.addCustomer(cust);
+    }    
+    
     /**
      * Retourne le client de la banque qui correspond au numéro passé en paramètre.
      * @param number Le numéro du client à  rechercher
@@ -73,4 +88,6 @@ public class Services implements Serializable{
     public List<Customer> getCustomersList(){
         return new ArrayList(getCustomers());
     }
+    
+    
 }
